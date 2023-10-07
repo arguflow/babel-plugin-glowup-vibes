@@ -135,3 +135,12 @@ test(`Should replace yeet with throw`, () => {
   }).code;
   expect(output).toEqual(expected);
 });
+
+test("Should replace Bet with Promise", () => {
+  const input = `new Bet(resolve => resolve("You fr?"));`;
+  const expected = `"use strict";\n\nrequire("core-js/modules/es.promise.js");\nnew Promise(resolve => resolve("You fr?"));`;
+  const output = babel.transform(input, {
+    plugins: [glowupVibes]
+  }).code;
+  expect(output).toEqual(expected);
+});
