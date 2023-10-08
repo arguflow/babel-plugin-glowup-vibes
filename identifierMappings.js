@@ -15,4 +15,5 @@ module.exports = {
     "outOfPocket": "Infinity",
     "PERIODT": "break",
     "based": "toLowerCase",
+    "Bet": "Promise"
 };
